@@ -1,0 +1,1 @@
+export const MAPPINGS = Symbol.for('mappings');

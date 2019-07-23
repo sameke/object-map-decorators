@@ -1,0 +1,30 @@
+{
+  "name": "@sameke/object-map-decorators",
+  "version": "1.0.0",
+  "description": "allows creating simple object maps using decorators",
+  "main": "dist/index.js",
+  "scripts": {
+    "tsc": "tsc -d",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sameke/object-map-decorators.git"
+  },
+  "author": "weagle08",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sameke/object-map-decorators/issues"
+  },
+  "homepage": "https://github.com/sameke/object-map-decorators#readme",
+  "devDependencies": {
+    "@types/chai": "^4.1.7",
+    "@types/mocha": "^5.2.7",
+    "chai": "^4.2.0",
+    "mocha": "^6.2.0",
+    "typescript": "^3.5.3"
+  },
+  "dependencies": {
+    "reflect-metadata": "^0.1.13"
+  }
+}
