@@ -10,7 +10,7 @@ class Test {
     @MapFrom('username', () => SubTest)
     public email!: string;
 
-    @MapFrom((t: SubTest) => t.foo)
+    @MapFrom((t: SubTest) => t.foo, () => SubTest)
     public bar!: string;
 }
 

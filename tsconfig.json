@@ -10,7 +10,6 @@
       "es6"
     ],
     "noImplicitAny": true,
-    "strict": true,
     "outDir": "dist",
     "baseUrl": "."
   }
