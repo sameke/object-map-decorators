@@ -1,9 +1,12 @@
-import { MapFrom } from 'src/MapFrom';
+import { MapFrom } from '../../src/MapFrom';
 import { Foo } from './Foo';
-import { Mapped } from '../src/Mapper';
+import { Mapper } from '../../src/Mapper';
 
-@Mapped()
 export class Bar {
+    constructor() {
+        console.log('c called');
+    }
+
     @MapFrom('firstName')
     public first: string;
 
@@ -11,6 +14,7 @@ export class Bar {
     public last: string;
 
     @MapFrom((f: Foo) => f.userId, Foo)
+    @MapFrom('userId')
     public username: string;
 
     @MapFrom()

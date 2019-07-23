@@ -1,4 +1,7 @@
+import { Type } from "./types";
+
 export interface IMappingRule {
     map: string | ((obj: any) => any);
-    sourceKey?: (() => Function) | string | Function;
+    sourceKey?: string | Type;
+    targetKey: string;
 }

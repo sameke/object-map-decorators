@@ -6,15 +6,8 @@
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "declaration": true,
-    "lib": [
-      "es6"
-    ],
     "noImplicitAny": true,
     "outDir": "dist",
     "baseUrl": "."
-  },
-  "exclude": [
-    "examples/",
-    "test/"
-  ]
+  }
 }

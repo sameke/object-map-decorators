@@ -1,19 +1,40 @@
-import { MapFrom } from 'src/MapFrom';
+import { MapFrom } from '../src/MapFrom';
+import { assert, expect } from 'chai';
+import { Foo } from './types/Foo';
+import { Mapper } from '../src/Mapper';
+import { Bar } from './types/Bar';
 
-class Test {
-    @MapFrom()
-    public name!: string;
+describe('MapFrom', () => {
+    it('should map default (no source key) properties', () => {
+        let foo = new Foo();
+        foo.lastName = 'Archer';
+        foo.firstName = 'Sterling';
+        foo.email = 'archer@isis.com';
+        foo.userId = 'sarcher';
 
-    @MapFrom('username')
-    public username!: string;
+        let bar: Bar = Mapper.map(foo, Bar);
 
-    @MapFrom('username', () => SubTest)
-    public email!: string;
+        expect(bar.first).to.equal(foo.firstName);
+        expect(bar.last).to.equal(foo.lastName);
+        expect(bar.username).to.equal(foo.userId);
+        expect(bar.email).to.equal(foo.email);
+    });
+});
 
-    @MapFrom((t: SubTest) => t.foo, () => SubTest)
-    public bar!: string;
-}
+// class Test {
+//     @MapFrom()
+//     public name!: string;
 
-class SubTest {
-    public foo!: string;
-}
+//     @MapFrom('username')
+//     public username!: string;
+
+//     @MapFrom('username', () => SubTest)
+//     public email!: string;
+
+//     @MapFrom((t: SubTest) => t.foo, () => SubTest)
+//     public bar!: string;
+// }
+
+// class SubTest {
+//     public foo!: string;
+// }

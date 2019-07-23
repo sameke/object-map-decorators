@@ -4,9 +4,16 @@
   "description": "allows creating simple object maps using decorators",
   "main": "dist/index.js",
   "scripts": {
-    "tsc": "tsc -d",
+    "tsc": "tsc -p tsconfig.dist.json",
+    "build": "npm run tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "files": [
+    "dist",
+    "package.json",
+    "LICENSE",
+    "README.md"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sameke/object-map-decorators.git"
@@ -17,6 +24,11 @@
     "url": "https://github.com/sameke/object-map-decorators/issues"
   },
   "homepage": "https://github.com/sameke/object-map-decorators#readme",
+  "keywords": [
+    "automapper",
+    "object-mapper",
+    "object-map"
+  ],
   "devDependencies": {
     "@types/chai": "^4.1.7",
     "@types/mocha": "^5.2.7",
