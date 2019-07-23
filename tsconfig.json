@@ -12,5 +12,9 @@
     "noImplicitAny": true,
     "outDir": "dist",
     "baseUrl": "."
-  }
+  },
+  "exclude": [
+    "examples/",
+    "test/"
+  ]
 }

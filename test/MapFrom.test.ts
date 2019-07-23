@@ -1,4 +1,4 @@
-import { MapFrom } from "src/MapFrom";
+import { MapFrom } from 'src/MapFrom';
 
 class Test {
     @MapFrom()
