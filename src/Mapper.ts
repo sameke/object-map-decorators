@@ -1,4 +1,3 @@
-import 'reflect-metadata';
 import { IMappingRule } from './IMappingRule';
 import { MAPPINGS } from './constants';
 import { Type, IndexableClass } from './types';
@@ -19,8 +18,11 @@ export class Mapper {
             return destination;
         }
 
-        let mappings: IMappingRule[] = Reflect.getMetadata(MAPPINGS, destination.constructor);
+        let mappings: IMappingRule[] = (destination as any)[MAPPINGS];
 
+        if (mappings == null) {
+            return destination;
+        }
         // fillter the mappings to match source key
         mappings = mappings.filter((mr: IMappingRule) => {
             return mr.sourceKey == sourceKey;
