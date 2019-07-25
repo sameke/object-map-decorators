@@ -14,7 +14,7 @@ export class Mapper {
         return target;
     }
 
-    public static mapTo<T extends Type>(source: any, destination: T, sourceKey: string | Function = null): T {
+    public static mapTo<T extends Object>(source: any, destination: T, sourceKey: string | Function = null): T {
         if (source == null || destination == null) {
             return destination;
         }
